@@ -1,12 +1,13 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="h4 font-weight-bold">
-            {{ __('Your Wall') }}
+            {{ __('Friends') }}
         </h2>
     </x-slot>
 
+    {{-- Show Auth user Friends--}}
+    @livewire('friends')
 
 
-    @livewire('wall-comments')
 
 </x-app-layout>

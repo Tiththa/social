@@ -11,6 +11,7 @@ use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
 use Hootlex\Friendships\Traits\Friendable;
 
+
 class User extends Authenticatable
 {
     use HasApiTokens;
@@ -19,6 +20,8 @@ class User extends Authenticatable
     use Notifiable;
     use TwoFactorAuthenticatable;
     use Friendable;
+
+
 
 
     /**
@@ -66,8 +69,8 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
-    public function posts()
+    public function comments()
     {
-        $this->hasMany('App\Models\Post');
+        $this->hasMany('App\Models\Comment');
     }
 }

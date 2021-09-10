@@ -18,6 +18,9 @@
 
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav align-items-baseline">
+
+                <li class="nav-item"><a href="{{route('friends')}}" class="nav-link">My Friends</a></li>
+
                 <!-- Teams Dropdown -->
                 @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
                     <x-jet-dropdown id="teamManagementDropdown">
