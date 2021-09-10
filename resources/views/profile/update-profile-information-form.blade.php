@@ -4,7 +4,7 @@
     </x-slot>
 
     <x-slot name="description">
-        {{ __('Update your account\'s profile information and email address.') }}
+        {{ __('Update your account\'s profile information and general details.') }}
     </x-slot>
 
     <x-slot name="form">
@@ -44,7 +44,7 @@
                 <x-jet-secondary-button class="mt-2 me-2" type="button" x-on:click.prevent="$refs.photo.click()">
                     {{ __('Select A New Photo') }}
 				</x-jet-secondary-button>
-				
+
 				@if ($this->user->profile_photo_path)
                     <x-jet-secondary-button type="button" class="mt-2" wire:click="deleteProfilePhoto">
                         <div wire:loading wire:target="deleteProfilePhoto" class="spinner-border spinner-border-sm" role="status">
@@ -60,6 +60,13 @@
         @endif
 
         <div class="w-md-75">
+            <!-- Username -->
+            <div class="mb-3">
+                <x-jet-label for="username" value="{{ __('Username') }}" />
+                <x-jet-input id="username" type="text" class="{{ $errors->has('username') ? 'is-invalid' : '' }}" wire:model.defer="state.username" autocomplete="username" />
+                <x-jet-input-error for="username" />
+            </div>
+
             <!-- Name -->
             <div class="mb-3">
                 <x-jet-label for="name" value="{{ __('Name') }}" />
@@ -67,11 +74,27 @@
                 <x-jet-input-error for="name" />
             </div>
 
-            <!-- Email -->
-            <div class="mb-3">
-                <x-jet-label for="email" value="{{ __('Email') }}" />
-                <x-jet-input id="email" type="email" class="{{ $errors->has('email') ? 'is-invalid' : '' }}" wire:model.defer="state.email" />
-                <x-jet-input-error for="email" />
+            <div class="row">
+                <!-- Date of Birth -->
+                <div class="mb-3 col-md-4">
+                    <x-jet-label for="dob" value="{{ __('Name') }}" />
+                    <x-jet-input id="dob" type="date" class="{{ $errors->has('dob') ? 'is-invalid' : '' }}" wire:model.defer="state.dob" autocomplete="dob" />
+                    <x-jet-input-error for="dob" />
+                </div>
+
+                <!-- Name -->
+                <div class="mb-4 col-md-4">
+                    <x-jet-label for="location" value="{{ __('Location') }}" />
+                    <x-jet-input placeholder="Enter your City and Country" id="location" type="text" class="{{ $errors->has('location') ? 'is-invalid' : '' }}" wire:model.defer="state.location" autocomplete="location" />
+                    <x-jet-input-error for="location" />
+                </div>
+            </div>
+
+            <!-- About me -->
+            <div class="mb-3 col-md-12">
+                <x-jet-label for="description" value="{{ __('About Me') }}" />
+                <textarea id="description" placeholder="Tell who you are.." rows="5" class="form-control {{ $errors->has('description') ? 'is-invalid' : '' }}" wire:model.defer="state.description"></textarea>
+                <x-jet-input-error for="description" />
             </div>
         </div>
     </x-slot>

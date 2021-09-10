@@ -15,8 +15,7 @@
 
         @livewireStyles
 
-        <!-- Scripts -->
-        <script src="{{ mix('js/app.js') }}" defer></script>
+        @stack('styles')
     </head>
     <body class="font-sans antialiased bg-light">
         <x-jet-banner />
@@ -32,10 +31,13 @@
         <!-- Page Content -->
         <main class="container my-5">
             {{ $slot }}
+            @yield('content')
         </main>
 
         @stack('modals')
-
+        <!-- Scripts -->
+        <script src="{{ mix('js/app.js') }}" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
         @livewireScripts
 
         @stack('scripts')

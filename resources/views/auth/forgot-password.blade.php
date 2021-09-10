@@ -22,8 +22,8 @@
                 @csrf
 
                 <div class="mb-3">
-                    <x-jet-label value="Email" />
-                    <x-jet-input type="email" name="email" :value="old('email')" required autofocus />
+                    <x-jet-label value="Username" />
+                    <x-jet-input type="text" name="username" :value="old('username')" required autofocus />
                 </div>
 
                 <div class="d-flex justify-content-end mt-4">

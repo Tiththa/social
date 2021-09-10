@@ -18,7 +18,7 @@
 
             <div class="mb-3">
                 <x-jet-label for="password" value="{{ __('New Password') }}" />
-                <x-jet-input id="password" type="password" class="{{ $errors->has('password') ? 'is-invalid' : '' }}"
+                <x-jet-input id="password" type="password" class="{{ $errors->has('password') ? 'is-invalid' : '' }} pr-password"
                              wire:model.defer="state.password" autocomplete="new-password" />
                 <x-jet-input-error for="password" />
             </div>
@@ -33,7 +33,7 @@
     </x-slot>
 
     <x-slot name="actions">
-        <x-jet-button>
+        <x-jet-button >
             <div wire:loading class="spinner-border spinner-border-sm" role="status">
                 <span class="visually-hidden">Loading...</span>
             </div>
@@ -42,3 +42,18 @@
         </x-jet-button>
     </x-slot>
 </x-jet-form-section>
+
+@push('styles')
+    <link rel="stylesheet" href="/css/jquery.passwordRequirements.css" />
+@endpush
+
+@push('scripts')
+    <script src="/js/jquery.passwordRequirements.min.js"></script>
+    <script>
+        $(document).ready(function (){
+            $(".pr-password").passwordRequirements({
+
+            });
+        });
+    </script>
+@endpush

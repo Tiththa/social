@@ -33,19 +33,26 @@
                 </div>
 
                 <div class="mb-3">
-                    <div class="custom-control custom-checkbox">
-                        <x-jet-checkbox id="remember_me" name="remember" />
-                        <label class="custom-control-label" for="remember_me">
-                            {{ __('Remember Me') }}
-                        </label>
+                    <div class="d-flex justify-content-between align-items-baseline">
+                        <div class="custom-control custom-checkbox">
+                            <x-jet-checkbox id="remember_me" name="remember" />
+                            <label class="custom-control-label" for="remember_me">
+                                {{ __('Remember Me') }}
+                            </label>
+                        </div>
+                        @if (Route::has('password.request'))
+                            <a class="text-muted me-3" href="{{ route('password.request') }}">
+                                {{ __('Forgot your password?') }}
+                            </a>
+                        @endif
                     </div>
                 </div>
 
                 <div class="mb-0">
                     <div class="d-flex justify-content-end align-items-baseline">
-                        @if (Route::has('password.request'))
-                            <a class="text-muted me-3" href="{{ route('password.request') }}">
-                                {{ __('Forgot your password?') }}
+                        @if (Route::has('register'))
+                            <a class="text-muted me-3" href="{{ route('register') }}">
+                                {{ __('No account yet?') }}
                             </a>
                         @endif
 
