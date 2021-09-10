@@ -9,7 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
-use Hootlex\Friendships\Traits\Friendable;
+use DevKhris\Friendships\Traits\Friendable;
 
 
 class User extends Authenticatable
@@ -71,6 +71,6 @@ class User extends Authenticatable
 
     public function comments()
     {
-        $this->hasMany('App\Models\Comment');
+        return $this->hasMany('App\Models\Comment');
     }
 }

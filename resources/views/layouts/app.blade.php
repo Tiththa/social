@@ -14,9 +14,13 @@
         <!-- Styles -->
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 
+
+
         @livewireStyles
 
         @stack('styles')
+
+
     </head>
     <body class="font-sans antialiased bg-light">
         <x-jet-banner />
@@ -40,6 +44,12 @@
         <script src="{{ mix('js/app.js') }}" defer></script>
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
         @livewireScripts
+
+        <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10">
+        </script>
+
+        <x-livewire-alert::scripts />
 
         @stack('scripts')
     </body>

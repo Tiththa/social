@@ -23,5 +23,5 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('dashboard', [HomeController::class, 'index'])->name('dashboard');
     Route::get('about', [UserController::class, 'showAboutMe'])->name('about-me');
     Route::get('friends', [UserController::class, 'showFriends'])->name('friends');
-    Route::get('users/{username}', [UserController::class, 'showWall'])->name('wall');
+    Route::get('friends/{username}', [UserController::class, 'showWall'])->name('wall');
 });

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9d08b11b3411e255a9db8dd5d413e13c",
+    "content-hash": "3001481e6b5489c3b18263871c4c6ada",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -221,6 +221,66 @@
                 "source": "https://github.com/DASPRiD/Enum/tree/1.0.3"
             },
             "time": "2020-10-02T16:03:48+00:00"
+        },
+        {
+            "name": "devkhris/laravel-friendships",
+            "version": "v1.0.26",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/DevKhris/laravel-friendships.git",
+                "reference": "693225dcfc612c691998829dbf8f1501b6022f1a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/DevKhris/laravel-friendships/zipball/693225dcfc612c691998829dbf8f1501b6022f1a",
+                "reference": "693225dcfc612c691998829dbf8f1501b6022f1a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4"
+            },
+            "require-dev": {
+                "doctrine/dbal": "^3.0",
+                "fzaninotto/faker": "^1.9",
+                "laravel/laravel": "^8.5",
+                "mockery/mockery": "^1.4",
+                "phpunit/phpunit": "^9.5"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "DevKhris\\Friendships\\FriendshipsServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "DevKhris\\Friendships\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christian Hernandez",
+                    "email": "contact@devkhris.com"
+                }
+            ],
+            "description": "This package gives Eloquent models the ability to manage friendship relations, this package is a fork from hootlex/laravel-friendships.",
+            "keywords": [
+                "eloquent",
+                "friend-system",
+                "friends",
+                "friendships",
+                "laravel"
+            ],
+            "support": {
+                "source": "https://github.com/DevKhris/laravel-friendships/tree/v1.0.26"
+            },
+            "time": "2021-07-30T08:38:34+00:00"
         },
         {
             "name": "dflydev/dot-access-data",
@@ -978,41 +1038,38 @@
             "time": "2021-06-30T20:03:07+00:00"
         },
         {
-            "name": "hootlex/laravel-friendships",
-            "version": "v1.0.24",
+            "name": "jantinnerezo/livewire-alert",
+            "version": "2.1.6",
             "source": {
                 "type": "git",
-                "url": "https://github.com/hootlex/laravel-friendships.git",
-                "reference": "0100718545bad757006737c21a7b35dc5c52b443"
+                "url": "https://github.com/jantinnerezo/livewire-alert.git",
+                "reference": "e5e05f63c42b1410433a1c70d2a9a9d48939f949"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hootlex/laravel-friendships/zipball/0100718545bad757006737c21a7b35dc5c52b443",
-                "reference": "0100718545bad757006737c21a7b35dc5c52b443",
+                "url": "https://api.github.com/repos/jantinnerezo/livewire-alert/zipball/e5e05f63c42b1410433a1c70d2a9a9d48939f949",
+                "reference": "e5e05f63c42b1410433a1c70d2a9a9d48939f949",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.4.0"
-            },
-            "require-dev": {
-                "codeclimate/php-test-reporter": "^0.3.2",
-                "doctrine/dbal": "^2.5",
-                "fzaninotto/faker": "~1.4",
-                "laravel/laravel": "5.*",
-                "mockery/mockery": "^0.9.5",
-                "phpunit/phpunit": "5.*"
+                "illuminate/support": "^5.5 || ^6.0 || ^7.0 || ^8.0",
+                "livewire/livewire": "^2.0",
+                "php": "^7.1|^7.2|^7.3|^7.4|^8.0"
             },
             "type": "library",
             "extra": {
                 "laravel": {
                     "providers": [
-                        "Hootlex\\Friendships\\FriendshipsServiceProvider"
-                    ]
+                        "Jantinnerezo\\LivewireAlert\\LivewireAlertServiceProvider"
+                    ],
+                    "aliases": {
+                        "LivewireAlert": "Jantinnerezo\\LivewireAlert\\LivewireAlertFacade"
+                    }
                 }
             },
             "autoload": {
                 "psr-4": {
-                    "Hootlex\\Friendships\\": "src/"
+                    "Jantinnerezo\\LivewireAlert\\": "src"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -1021,23 +1078,28 @@
             ],
             "authors": [
                 {
-                    "name": "Hootlex",
-                    "email": "hootlex@icloud.com"
+                    "name": "Jantinn Erezo",
+                    "email": "erezojantinn@gmail.com",
+                    "role": "Developer"
                 }
             ],
-            "description": "This package gives Eloquent models the ability to manage their friendships.",
+            "description": "This package provides a simple alert utilities for your livewire components.",
+            "homepage": "https://github.com/jantinnerezo/livewire-alert",
             "keywords": [
-                "eloquent",
-                "friend-system",
-                "friends",
-                "friendships",
-                "laravel"
+                "jantinnerezo",
+                "livewire-alert"
             ],
             "support": {
-                "issues": "https://github.com/hootlex/laravel-friendships/issues",
-                "source": "https://github.com/hootlex/laravel-friendships/tree/master"
+                "issues": "https://github.com/jantinnerezo/livewire-alert/issues",
+                "source": "https://github.com/jantinnerezo/livewire-alert/tree/2.1.6"
             },
-            "time": "2018-07-03T09:16:10+00:00"
+            "funding": [
+                {
+                    "url": "https://www.paypal.com/paypalme/jantinn",
+                    "type": "custom"
+                }
+            ],
+            "time": "2021-05-06T07:45:52+00:00"
         },
         {
             "name": "jaybizzle/crawler-detect",
