@@ -19,7 +19,11 @@
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav align-items-baseline">
 
-                <li class="nav-item"><a href="{{route('friends')}}" class="nav-link">My Friends</a></li>
+                @if(Auth::user()->user_type == 'isAdmin')
+                <li class="nav-item " ><a href="{{route('admin.users')}}" class="nav-link {{ (request()->is('admin/users')) ? 'active' : '' }}">All Users</a></li>
+                @else
+                <li class="nav-item"><a href="{{route('friends')}}" class="nav-link {{ (request()->is('friends*')) ? 'active' : '' }}">My Friends</a></li>
+                @endif
 
                 <!-- Teams Dropdown -->
                 @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())

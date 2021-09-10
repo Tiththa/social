@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AdminController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,4 +25,11 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('about', [UserController::class, 'showAboutMe'])->name('about-me');
     Route::get('friends', [UserController::class, 'showFriends'])->name('friends');
     Route::get('friends/{username}', [UserController::class, 'showWall'])->name('wall');
+
+    Route::group(['prefix' => 'admin','middleware' => ['admin_only']],function() {
+        Route::get('users', [AdminController::class, 'allUsers'])->name('admin.users');
+        Route::get('users/{id}/edit', [AdminController::class, 'editUser'])->name('admin.user_edit');
+        Route::post('users/{id}/update', [AdminController::class, 'updateUser'])->name('admin.update');
+    });
+
 });

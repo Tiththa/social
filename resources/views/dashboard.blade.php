@@ -7,6 +7,6 @@
 
 
 
-    @livewire('wall-comments')
+    @livewire('wall-comments',['user_id' => $user->id])
 
 </x-app-layout>

@@ -35,7 +35,8 @@ class User extends Authenticatable
         'password',
         'description',
         'dob',
-        'location'
+        'location',
+        'user_type'
     ];
 
 

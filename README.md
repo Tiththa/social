@@ -7,58 +7,93 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+## About Social.io
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- Simple Registration and Login/Logout
+- Wall for each user
+- Captcha in registration page
+- Password strength validation
+- Profile Picture add/update
+- About me page
+- Administration Access (Role Based)
+- Add Friends
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Setting-up
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- XAMPP Setup
+    - XAMPP v3.330 up with PHP 8.0
+    - Setup vhost `xampp/apache/conf/extra/httpd-vhosts.conf`
+    - Update hosts file with the specified domain `social.io`
+    - Restart after setting-up these configurations
+    
+    ```php
+    <VirtualHost social.io:80>
+        ServerAdmin webmaster@localhost
+        DocumentRoot "C:/xampp/htdocs/social/public"
+        ServerName social.io	
+        
+        <Directory "C:/xampp/htdocs/social/public">
+            Options Indexes FollowSymLinks MultiViews
+            AllowOverride All
+            Order Allow,Deny
+            Allow from all
+            Require all granted
+        </Directory>
+    </VirtualHost>
+    ```
+    ```php
+    127.0.0.1 social.io
+    ```
+- Unzip the file in htdocs. Should only have one level
 
-## Learning Laravel
+    ```php
+    //not like this - path/htdocs/social/social/public
+    
+    //should be like this - path/htdocs/social/public
+    ```
+- Download Composer from [official site](https://getcomposer.org/download/)
+- Download and install NodeJs [official site](https://nodejs.org/en/download/)
+- cd into the project `social` 
+  ```php
+  composer install  
+  ```
+  ```php
+  npm install  
+  ```
+  ```php
+  npm run dev  
+  ```
+  ```php
+  cp .env.example .env 
+  //copy the .env.example to .env  
+  ```
+  ```php
+  php artisan key:generate  
+  ```
+- Setup a database name (default: social)
+- migrate and seed the database
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+  ```php
+  php artisan migrate --seed  
+  ```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Configuration
 
-## Laravel Sponsors
+### Admin Details
+- Username: `Admin`
+- Password: `\2\r&Gep6&8A;49K`
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+Password defined in `database/seeders/DatabaseSeeder.php`
 
-### Premium Partners
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[CMS Max](https://www.cmsmax.com/)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
+## Stack
 
-## Contributing
+- [Jetstream](https://jetstream.laravel.com) with [Fortify](https://laravel.com/docs/8.x/fortify) for Authentication
+- [Alipne JS](https://alpinejs.dev) and [Livewire](https://laravel-livewire.com/) for Advanced Ajax/Reloading without refreshing
+- [Telescope](https://laravel.com/docs/8.x/telescope) for Logging and Debugging
+- [Google Recaptcha V3](https://www.google.com/recaptcha/admin)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Code of Conduct
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).

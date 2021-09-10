@@ -27,7 +27,9 @@
                                         photoPreview = e.target.result;
                                     };
                                     reader.readAsDataURL($refs.photo.files[0]);
-                            " />
+                            "
+                       accept=".png,.jpg,.jpeg"
+                />
 
                 <x-jet-label for="photo" value="{{ __('Photo') }}" />
 

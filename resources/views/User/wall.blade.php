@@ -15,6 +15,8 @@
                     </div>
                     <div class="text-center mt-4">
                         <h4>{{ $user->name}}</h4>
+                        <p class="p-0 m-0 text-muted"><i class="ti ti-time "></i> {{ $user->dob ? $user->dob : 'Birthday not specified'}}</p>
+                        <p class="p-0 m-0 text-muted"><i class="ti ti-pin"></i> {{ $user->location ? $user->location : 'Location not specified'}}</p>
                         <p>{{ $user->description ?? ''}}</p>
 
                         @livewire('friend-unfriend',['user_id' => $user->id])
