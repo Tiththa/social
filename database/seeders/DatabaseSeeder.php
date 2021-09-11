@@ -24,11 +24,7 @@ class DatabaseSeeder extends Seeder
             'user_type' => 'isAdmin'
         ]);
 
-         User::factory()->count(15)->create()->each(function ($user) {
-             Post::factory()->count(2)->create([
-                'user_id' => $user->id
-             ]);
-         });
+         User::factory()->count(15)->create();
 
 
 
