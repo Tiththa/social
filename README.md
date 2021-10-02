@@ -9,6 +9,8 @@
 
 ## About Social.io
 
+Project was setup for a PHP role Job Interview (Client requested). PDF of the project description can be found in the root directory. 
+
 - Simple Registration and Login/Logout
 - Wall for each user
 - Captcha in registration page
